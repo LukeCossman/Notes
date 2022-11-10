@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     {
         RecyclerView rv = findViewById(R.id.recycler_view);
 
-        NoteAdapter adapter = new NoteAdapter(Database.getData());
+        NoteAdapter adapter = new NoteAdapter(getSupportFragmentManager(), Database.getData());
         rv.setAdapter(adapter);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);

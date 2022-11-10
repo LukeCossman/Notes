@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -14,9 +15,11 @@ import java.util.ArrayList;
 public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder> {
 
     private ArrayList<Note> notesList;
+    private FragmentManager manager;
 
-    public NoteAdapter(ArrayList<Note> n)
+    public NoteAdapter(FragmentManager man, ArrayList<Note> n)
     {
+        manager = man;
         notesList = n;
     }
 
@@ -41,7 +44,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
     }
 
 
-    class NoteViewHolder extends RecyclerView.ViewHolder
+    class NoteViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
         private TextView txtStatus;
         private TextView txtTitle;
@@ -65,6 +68,9 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
                     notifyItemRangeChanged(currentPosition, notesList.size());
                 }
             });
+            
+            view.setClickable(true);
+            view.setOnClickListener(this);
         }
 
         public void setData(Note n, int position)
@@ -74,6 +80,12 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
             txtText.setText(n.getText());
             currentPosition = position;
             currentNote = n;
+        }
+
+        public void onClick(View view)
+        {
+            DialogShowNote dialog = new DialogShowNote(currentNote);
+            dialog.show(manager, "");
         }
 
 
