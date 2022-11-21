@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/majes/AndroidStudioProjects/NoteToSelf/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/majes/AndroidStudioProjects/NoteToSelf/app/src/main/res/layout/dialog_add_note.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/majes/AndroidStudioProjects/NoteToSelf/app/src/main/res/layout/dialog_show_note.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/majes/AndroidStudioProjects/NoteToSelf/app/src/main/res/layout/dialogue_show_note.xml" value="0.253125" />
         <entry key="..\:/Users/majes/AndroidStudioProjects/NoteToSelf/app/src/main/res/layout/note.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/majes/AndroidStudioProjects/NoteToSelf/app/src/main/res/layout/note_row.xml" value="0.2536231884057971" />
